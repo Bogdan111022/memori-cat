@@ -1,0 +1,40 @@
+from PyQt5.QtWidgets import *
+
+app = QApplication([])
+window = QWidget()
+menu_btn = QPushButton('Меню')
+relax_btn = QPushButton('Відпочити')
+timer_sbx = QSpinBox()
+min_lbl = QLabel("Хвилин")
+quest_lbl = QLabel("2+2")
+var1_btn = QRadioButton("1")
+var2_btn = QRadioButton("2")
+var3_btn = QRadioButton("3")
+var4_btn = QRadioButton("4")
+answer_btn = QPushButton("Відповісти")
+group = QGroupBox("Варіанти відповідей")
+
+main_line = QVBoxLayout()
+
+horisontal_line1 = QHBoxLayout()
+horisontal_line1.addWidget(menu_btn)
+horisontal_line1.addStretch(1)
+horisontal_line1.addWidget(relax_btn)
+horisontal_line1.addWidget(timer_sbx)
+horisontal_line1.addWidget(min_lbl)
+main_line.addLayout(horisontal_line1)
+main_line.addWidget(quest_lbl)
+
+group_main_line = QVBoxLayout()
+group_main_line.addWidget(var1_btn)
+group_main_line.addWidget(var2_btn)
+group_main_line.addWidget(var3_btn)
+group_main_line.addWidget(var4_btn)
+group.setLayout(group_main_line)
+main_line.addWidget(group)
+main_line.addWidget(answer_btn)
+
+
+window.setLayout(main_line)
+window.show()
+app.exec()
